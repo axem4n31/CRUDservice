@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Поиск
+{% endblock %}
+
+{% block body %}
+      <form class="search-form" method="post">
+        {% csrf_token %}
+        <input class="input" type="text" name="query" placeholder="Введите текст..." value="{{ query|default:'' }}">
+        <button class="button" type="submit">Искать</button>
+        <a href="{% url 'main' %}"><div class="button">вернуться</div></a>
+      </form>
+
+    {% if tasks is not None %}
+        <h2>Результаты поиска:</h2>
+
+        {% if tasks %}
+            <div class="task-table-wrapper">
+                <table class="task-table">
+                    <thead>
+                        <tr>
+                            <th>Проект</th>
+                            <th>Задача</th>
+                            <th>Исполнитель</th>
+                            <th>Дата начала</th>
+                            <th>Требуемые дни</th>
+                            <th>Дата окончания</th>
+                            <th>Прогресс</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for task in tasks %}
+                            <tr>
+                                <td>{{ task.project.project_name }}</td>
+                                <td>{{ task.name }}</td>
+                                <td>{{ task.assigned_to.name }}</td>
+                                <td>{{ task.start_date }}</td>
+                                <td>{{ task.days_required }}</td>
+                                <td>{{ task.end_date }}</td>
+                                <td>{{ task.progress }}%</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <h2>Ничего не найдено</h2>
+        {% endif %}
+    {% endif %}
+{% endblock %}

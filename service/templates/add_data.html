@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Добавить данные
+{% endblock %}
+
+{% block body %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="button" type="submit">добавить запись</button>
+    <a href="{% url 'main' %}"><div class="button">вернуться</div></a>
+</form>
+{% endblock %}

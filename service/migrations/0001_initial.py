@@ -8,35 +8,53 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Project',
+            name="Project",
             fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('project_name', models.CharField(max_length=50)),
+                ("id", models.AutoField(primary_key=True, serialize=False)),
+                ("project_name", models.CharField(max_length=50)),
             ],
         ),
         migrations.CreateModel(
-            name='Worker',
+            name="Worker",
             fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('name', models.CharField(max_length=50)),
+                ("id", models.AutoField(primary_key=True, serialize=False)),
+                ("name", models.CharField(max_length=50)),
             ],
         ),
         migrations.CreateModel(
-            name='Task',
+            name="Task",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50)),
-                ('start_date', models.DateField()),
-                ('end_date', models.DateField()),
-                ('days_required', models.IntegerField()),
-                ('progress', models.IntegerField()),
-                ('project_name', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='service.project')),
-                ('assigned_to', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='service.worker')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=50)),
+                ("start_date", models.DateField()),
+                ("end_date", models.DateField()),
+                ("days_required", models.IntegerField()),
+                ("progress", models.IntegerField()),
+                (
+                    "project_name",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="service.project",
+                    ),
+                ),
+                (
+                    "assigned_to",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="service.worker"
+                    ),
+                ),
             ],
         ),
     ]

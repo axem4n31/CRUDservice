@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block body %}
-<div class="button">поиск</div>
-<div class="button">добавление записи</div>
-<div class="button">скачать БД</div>
+<a href="{% url 'search' %}"><div class="button">поиск</div></a>
+<a href="{% url 'add_data' %}"><div class="button">добавление записи</div></a>
+<a href="{% url 'export_tasks' %}"><div class="button">скачать БД</div></a>
 {% endblock %}
