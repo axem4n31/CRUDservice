@@ -13,9 +13,9 @@ CRUDservice — это современное и функциональное р
 1. Склонируйте репозиторий:
     ```
     git clone https://github.com/axem4n31/CRUDservice.git
-    cd CRUDservicd
+    cd CRUDservice
     ```
-2. Создайте файл `.env` в корневой директории и добавьте в него переменные окружения, скопировав их из файла `.env.template` или используя предоставленные данные.:
+2. Создайте файл `.env` в корневой директории и добавьте в него переменные окружения, скопировав их из файла `.env.template` или используя предоставленные данные:
     ```
     SECRET_KEY=django-insecure-fqkg(5ed57)ma+k$k&zp=vxtvo18)uo2r+k*^_=a$0k$4z!a)3
     POSTGRE_DB=postgres
