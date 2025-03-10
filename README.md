@@ -17,7 +17,7 @@ CRUDservice — это современное и функциональное р
     ```
 2. Создайте файл `.env` в корневой директории и добавьте в него переменные окружения, скопировав их из файла `.env.template` или используя предоставленные данные:
     ```
-    SECRET_KEY=django-insecure-fqkg(5ed57)ma+k$k&zp=vxtvo18)uo2r+k*^_=a$0k$4z!a)3
+    SECRET_KEY=testsecretkey
     POSTGRES_DB=postgres
     POSTGRES_USER=postgres
     POSTGRES_PASSWORD=123123
