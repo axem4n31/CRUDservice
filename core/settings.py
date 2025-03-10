@@ -18,11 +18,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 SECRET_KEY = os.getenv("SECRET_KEY")
-POSTGRE_DB = os.getenv("POSTGRE_DB")
-POSTGRE_USER = os.getenv("POSTGRE_USER")
-POSTGRE_PASSWORD = os.getenv("POSTGRE_PASSWORD")
-POSTGRE_HOST = os.getenv("POSTGRE_HOST")
-POSTGRE_PORT = os.getenv("POSTGRE_PORT")
+POSTGRES_DB = os.getenv("POSTGRES_DB")
+POSTGRES_USER = os.getenv("POSTGRES_USER")
+POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD")
+POSTGRES_HOST = os.getenv("POSTGRES_HOST")
+POSTGRES_PORT = os.getenv("POSTGRES_PORT")
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -80,11 +80,11 @@ WSGI_APPLICATION = "core.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": POSTGRE_DB,
-        "USER": POSTGRE_USER,
-        "PASSWORD": POSTGRE_PASSWORD,
-        "HOST": POSTGRE_HOST,
-        "PORT": POSTGRE_PORT,
+        "NAME": POSTGRES_DB,
+        "USER": POSTGRES_USER,
+        "PASSWORD": POSTGRES_PASSWORD,
+        "HOST": POSTGRES_HOST,
+        "PORT": POSTGRES_PORT,
     }
 }
 
